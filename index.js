@@ -93,7 +93,6 @@ server.delete('/products/:id', async (req,res) => {
 server.put('/products/:id', async (req,res)=> {
     let products;
     const {id} = req.params;
-
     const {name, brand, quantity, perishable} = req.body;
 
     await database.query(`UPDATE controle_estoque SET name = '${name}', brand = '${brand}', quantity = '${quantity}', perishable = '${perishable}' WHERE id = ${id};`,
